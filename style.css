@@ -1,0 +1,103 @@
+body {
+    font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+    background-color: #4c97ff; /* Azul clásico de Scratch */
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+}
+header { text-align: center; margin-bottom: 20px; }
+h1 { color: #ffffff; font-size: 26px; text-shadow: 0 3px 6px rgba(0,0,0,0.3); margin: 5px; }
+header p { color: #e0f2fe; font-size: 15px; }
+.marcador-puntos {
+    font-size: 18px; color: #ffffff; font-weight: bold; margin-top: 10px;
+    background: #ffab19; padding: 6px 18px; border-radius: 20px; display: inline-block;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+.main-container {
+    display: flex;
+    gap: 40px;
+    max-width: 850px;
+    width: 100%;
+}
+.columna {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Estilo de los bloques de Scratch */
+.tarjeta-juego {
+    background-color: #ffffff;
+    color: #2c3e50;
+    border: 3px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 5px 0 #cbd5e1, 0 6px 10px rgba(0,0,0,0.15);
+    transition: transform 0.1s, background-color 0.2s, border-color 0.2s;
+    line-height: 1.4;
+}
+.tarjeta-juego:hover {
+    transform: translateY(-2px);
+    border-color: #ffab19;
+}
+
+/* Colores temáticos para los bloques de la izquierda */
+.tarjeta-juego.tipo-termino {
+    font-size: 15px;
+    text-align: center;
+    color: #ffffff;
+}
+/* Colores por idMatch imitando categorías de Scratch */
+.tarjeta-juego.id-1 { background-color: #ffbf00; box-shadow: 0 5px 0 #d9a300; } /* Eventos */
+.tarjeta-juego.id-2 { background-color: #ffab19; box-shadow: 0 5px 0 #cf8b15; } /* Control */
+.tarjeta-juego.id-3 { background-color: #4c97ff; box-shadow: 0 5px 0 #3d7acc; } /* Movimiento */
+.tarjeta-juego.id-4 { background-color: #9966ff; box-shadow: 0 5px 0 #7a52cc; } /* Apariencia */
+.tarjeta-juego.id-5 { background-color: #ffab19; box-shadow: 0 5px 0 #cf8b15; } /* Control (Si entonces) */
+
+/* ESTADOS DEL JUEGO INTERACTIVO */
+.tarjeta-juego.seleccionado {
+    border-color: #ffffff !important;
+    transform: scale(1.04) translateY(-4px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.3) !important;
+}
+.tarjeta-juego.correcto {
+    background-color: #2ecc71 !important; /* Verde Scratch */
+    border-color: #27ae60 !important;
+    color: #ffffff;
+    box-shadow: 0 3px 0 #27ae60 !important;
+    cursor: default;
+    pointer-events: none;
+    transform: none;
+}
+
+/* Modal de Victoria */
+.modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(76, 151, 255, 0.95); justify-content: center; align-items: center;
+    z-index: 100;
+}
+.modal-content {
+    background-color: #ffffff; color: #2c3e50; padding: 40px; border-radius: 20px;
+    text-align: center; border: 4px solid #ffab19; max-width: 450px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.modal-content h2 { color: #ffab19; font-size: 24px; margin-top: 0; }
+.modal-content p { color: #555555; line-height: 1.5; }
+.modal-content button {
+    background-color: #2ecc71; color: white; border: none; padding: 12px 30px;
+    font-size: 16px; font-weight: bold; border-radius: 25px; cursor: pointer; margin-top: 20px;
+    box-shadow: 0 4px 0 #27ae60;
+}
+.modal-content button:hover { background-color: #27ae60; }

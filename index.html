@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scratch - Conecta los Bloques</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🐱 Scratch: Conecta los Bloques de Código 🧩</h1>
+        <p>Haz clic en un bloque de la izquierda y conéctalo con su función correcta en la derecha. ¡Une los 5 bloques!</p>
+        <div class="marcador-puntos">✨ Bloques Conectados: <span id="contador-puntos">0</span> / 5</div>
+    </header>
+
+    <div class="main-container">
+        <!-- Panel Izquierdo: Bloques de Scratch -->
+        <div class="columna" id="columna-terminos">
+            <!-- Se generan dinámicamente con JavaScript -->
+        </div>
+
+        <!-- Panel Derecho: Significado Técnico -->
+        <div class="columna" id="columna-definiciones">
+            <!-- Se generan dinámicamente con JavaScript -->
+        </div>
+    </div>
+
+    <!-- Pantalla de Victoria Final -->
+    <div id="modal-victoria" class="modal">
+        <div class="modal-content">
+            <h2>🏆 ¡PROYECTO COMPARTIDO EN SCRATCH! 🏆</h2>
+            <p>¡Espectacular! Has ordenado los bloques correctamente y tu personaje cobró vida sin errores. ¡Eres un gran programador!</p>
+            <button onclick="reiniciarJuego()">🔄 Volver a Programar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
